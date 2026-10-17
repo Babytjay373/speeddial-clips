@@ -3,151 +3,227 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Short-Form Clipping — Your long videos, cut into clips that get watched</title>
-<meta name="description" content="I turn your long videos into captioned, hook-driven vertical clips ready for Shorts, Reels and TikTok. First clip free.">
+<title>Short-Form Editing — long videos into clips that hold attention</title>
+<meta name="description" content="Turn long-form video into captioned, hook-driven vertical clips. Built for Shorts, Reels and TikTok. 48-hour turnaround.">
 <style>
   :root{
-    --bg:#0b0f1a; --panel:#131a2b; --panel2:#0f1524;
-    --ink:#eef2ff; --muted:#93a0bd; --accent:#ffd640; --line:#23304d;
+    --bg:#0a0b0e; --panel:#101218; --line:#1d2029;
+    --ink:#f4f6fa; --muted:#8b93a5; --accent:#e8c76a;
   }
   *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
   body{
-    margin:0; background:var(--bg); color:var(--ink);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
-    -webkit-font-smoothing:antialiased;
+    margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.68 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Helvetica,Arial,sans-serif;
+    -webkit-font-smoothing:antialiased;letter-spacing:-.005em;
   }
-  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
-  section{padding:64px 0;border-bottom:1px solid var(--line)}
-  h1{font-size:clamp(30px,5.2vw,50px);line-height:1.1;margin:0 0 18px;letter-spacing:-.02em}
-  h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 26px;letter-spacing:-.01em}
-  h3{font-size:17px;margin:0 0 8px}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 26px}
+  section{padding:86px 0;border-bottom:1px solid var(--line)}
+  h1{font-size:clamp(33px,5.2vw,54px);line-height:1.08;margin:0 0 22px;letter-spacing:-.035em;font-weight:680}
+  h2{font-size:clamp(22px,3.3vw,30px);margin:0 0 14px;letter-spacing:-.025em;font-weight:660}
+  h3{font-size:16.5px;margin:0 0 9px;letter-spacing:-.01em}
   p{margin:0 0 16px;color:var(--muted)}
-  .lead{font-size:clamp(17px,2.3vw,20px);color:#c3cddf;max-width:640px}
+  .lead{font-size:clamp(16.5px,2.1vw,19px);color:#aab4c6;max-width:600px;line-height:1.7}
   .accent{color:var(--accent)}
-  .cta{
-    display:inline-block;background:var(--accent);color:#0b0f1a;font-weight:700;
-    padding:15px 30px;border-radius:10px;text-decoration:none;font-size:17px;
-  }
-  .cta:hover{filter:brightness(1.08)}
-  .cta.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:10px}
-  .row{display:flex;gap:34px;flex-wrap:wrap;align-items:flex-start}
-  .col{flex:1 1 300px;min-width:280px}
-  video{width:100%;max-width:310px;border-radius:14px;display:block;background:#000;
-        box-shadow:0 20px 50px rgba(0,0,0,.5)}
-  ul.checks{list-style:none;padding:0;margin:0}
-  ul.checks li{padding:9px 0 9px 30px;position:relative;color:#c3cddf;border-bottom:1px solid var(--line)}
-  ul.checks li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
-  .tiers{display:flex;gap:18px;flex-wrap:wrap;margin-top:8px}
-  .tier{
-    flex:1 1 220px;background:var(--panel);border:1px solid var(--line);
-    border-radius:14px;padding:24px 22px;
-  }
-  .tier.best{border-color:var(--accent);background:var(--panel2)}
-  .tier .price{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
-  .tier .per{color:var(--muted);font-size:14px;margin-bottom:16px}
-  .tier ul{list-style:none;padding:0;margin:0;font-size:14.5px;color:#c3cddf}
-  .tier li{padding:5px 0}
-  .badge{
-    display:inline-block;background:rgba(255,214,64,.12);color:var(--accent);
-    border:1px solid rgba(255,214,64,.3);padding:4px 11px;border-radius:999px;
-    font-size:12.5px;font-weight:650;letter-spacing:.02em;margin-bottom:20px;
-  }
-  .stat{display:flex;gap:38px;flex-wrap:wrap;margin:26px 0 0}
-  .stat div{min-width:130px}
-  .stat b{display:block;font-size:32px;color:var(--accent);letter-spacing:-.02em}
-  .stat span{font-size:13.5px;color:var(--muted)}
-  .faq{border-top:1px solid var(--line);padding:20px 0}
-  .faq summary{cursor:pointer;font-weight:650;color:var(--ink);list-style:none}
-  .faq summary::-webkit-details-marker{display:none}
-  .faq summary:before{content:"+ ";color:var(--accent);font-weight:700}
-  .faq[open] summary:before{content:"− "}
-  .faq p{margin:12px 0 0;font-size:15px}
-  footer{padding:44px 0 70px;color:var(--muted);font-size:14px}
-  @media(max-width:560px){.cta.ghost{margin:12px 0 0;display:block;text-align:center}}
+  .eyebrow{font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent);font-weight:700;margin-bottom:22px}
+  .btn{display:inline-block;background:var(--accent);color:#12100a;font-weight:700;
+    padding:15px 30px;border-radius:9px;text-decoration:none;font-size:15.5px}
+  .btn:hover{filter:brightness(1.07)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--line);margin-left:11px}
+
+  header{position:sticky;top:0;z-index:40;background:rgba(10,11,14,.86);
+    backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:17px 0}
+  .brand{font-weight:700;letter-spacing:-.02em;font-size:16.5px}
+  .brand span{color:var(--accent)}
+  .navlinks{display:flex;gap:28px;font-size:14px}
+  .navlinks a{text-decoration:none;color:var(--muted)}
+  .navlinks a:hover{color:var(--ink)}
+  @media(max-width:780px){.navlinks{display:none}}
+
+  .hero{display:flex;gap:56px;flex-wrap:wrap;align-items:center}
+  .hero .col{flex:1 1 340px;min-width:290px}
+  .reel{width:100%;max-width:310px;border-radius:12px;display:block;background:#000;
+    box-shadow:0 24px 60px rgba(0,0,0,.55)}
+
+  .grid{display:flex;gap:20px;flex-wrap:wrap;margin-top:28px}
+  .card{flex:1 1 280px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:26px}
+  .card .num{font-size:12px;font-weight:700;letter-spacing:.1em;color:var(--accent);margin-bottom:14px}
+
+  .price{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px}
+  .tier{flex:1 1 230px;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:28px 24px}
+  .tier.featured{border-color:rgba(232,199,106,.42);
+    background:linear-gradient(165deg,rgba(232,199,106,.05),transparent 60%)}
+  .tier .label{font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+  .tier .amount{font-size:36px;font-weight:700;letter-spacing:-.035em;line-height:1}
+  .tier .per{font-size:13.5px;color:var(--muted);margin:7px 0 20px}
+  .tier ul{list-style:none;padding:0;margin:0;font-size:14.5px;color:#a8b2c4}
+  .tier li{padding:6px 0}
+
+  .stat{display:flex;gap:44px;flex-wrap:wrap;margin-top:30px}
+  .stat div{min-width:120px}
+  .stat b{display:block;font-size:29px;font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+  .stat span{font-size:13px;color:var(--muted)}
+
+  details{border-top:1px solid var(--line);padding:20px 0}
+  summary{cursor:pointer;font-weight:640;color:var(--ink);list-style:none;font-size:15.5px}
+  summary::-webkit-details-marker{display:none}
+  summary:before{content:"+";color:var(--accent);font-weight:700;margin-right:12px}
+  details[open] summary:before{content:"−"}
+  details p{margin:13px 0 0 26px;font-size:15px}
+
+  .cta{border:1px solid var(--line);border-radius:14px;padding:48px 36px;text-align:center;
+    background:linear-gradient(170deg,rgba(232,199,106,.055),transparent 70%)}
+  footer{padding:52px 0 76px;color:#5c6478;font-size:13px}
 </style>
 </head>
 <body>
 
-<section>
+<header>
   <div class="wrap">
-    <div class="badge">First clip free · 48-hour turnaround</div>
-    <h1>Your long videos, cut into clips that <span class="accent">get watched.</span></h1>
-    <p class="lead">
-      I turn your podcasts, streams and long-form videos into captioned, hook-driven
-      vertical clips — formatted correctly for Shorts, Reels and TikTok.
-      You film. I do the rest.
-    </p>
-    <a class="cta" href="#offer">Get one clip free</a>
-    <a class="cta ghost" href="#work">See the work</a>
+    <nav>
+      <div class="brand">Short<span>Form</span> Studio</div>
+      <div class="navlinks">
+        <a href="#work">Work</a>
+        <a href="#deliverables">Deliverables</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <a class="btn" style="padding:11px 22px;font-size:14.5px" href="#contact">Start a project</a>
+    </nav>
+  </div>
+</header>
+
+<section>
+  <div class="wrap hero">
+    <div class="col">
+      <div class="eyebrow">Short-form editing</div>
+      <h1>Your long videos, cut into clips that <span class="accent">hold attention.</span></h1>
+      <p class="lead">
+        I take podcasts, interviews, streams and long-form video and turn them into
+        vertical clips — hook written, captions burned in, specs correct for Shorts,
+        Reels and TikTok.
+      </p>
+      <p class="lead" style="margin-bottom:30px">You keep filming. I handle the cut.</p>
+      <a class="btn" href="#contact">Start a project</a>
+      <a class="btn ghost" href="#pricing">See pricing</a>
+    </div>
+    <div class="col" style="flex:0 0 auto">
+      <video class="reel" src="showreel.mp4" controls playsinline muted poster="card-intro.png"></video>
+    </div>
   </div>
 </section>
 
 <section id="work">
   <div class="wrap">
-    <h2>Recent work</h2>
-    <div class="row">
-      <div style="flex:0 0 auto">
-        <video src="showreel.mp4" controls playsinline muted poster="card-intro.png"></video>
-      </div>
-      <div class="col">
-        <p>Real campaign work for brands on Whop — where every clip is reviewed
-           against strict rules on captions, watermarks, tagging and specs.</p>
-        <ul class="checks">
-          <li><b>Boxabl × ASG</b> — real estate clipping, brand logo placement</li>
-          <li><b>MilkXP × Clip Farm</b> — required watermark, compliance-checked</li>
-          <li><b>SEGA</b> — gaming trailer edit with burned-in captions</li>
-          <li><b>Hafid</b> — French-language lifestyle clips with CTAs</li>
-        </ul>
-      </div>
-    </div>
+    <div class="eyebrow">The work</div>
+    <h2>Built for the platforms people actually watch</h2>
+    <p style="max-width:620px">
+      Every clip arrives vertical, captioned and ready to post — no reformatting, no
+      re-exporting, no platform suppressing it for the wrong aspect ratio.
+    </p>
     <div class="stat">
-      <div><b>2,295</b><span>views in 48h</span></div>
-      <div><b>28s</b><span>average clip</span></div>
-      <div><b>1080×1920</b><span>platform-ready</span></div>
-      <div><b>~5 min</b><span>per clip with my pipeline</span></div>
+      <div><b>1080×1920</b><span>ready to post</span></div>
+      <div><b>20–45s</b><span>typical clip length</span></div>
+      <div><b>48 hours</b><span>standard turnaround</span></div>
+      <div><b>2 rounds</b><span>revisions included</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="deliverables">
+  <div class="wrap">
+    <div class="eyebrow">What you receive</div>
+    <h2>Every clip includes</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="num">01</div>
+        <h3>Vertical export</h3>
+        <p>1080×1920, H.264, faststart — correct for Shorts, Reels and TikTok without
+           letterboxing or cropping the subject out of frame.</p>
+      </div>
+      <div class="card">
+        <div class="num">02</div>
+        <h3>Burned-in captions</h3>
+        <p>Word-level timing with keyword highlighting. Names and brand terms corrected
+           by hand, because auto-captions get them wrong.</p>
+      </div>
+      <div class="card">
+        <div class="num">03</div>
+        <h3>Hook on screen</h3>
+        <p>A written hook for the first three seconds — the part that decides whether
+           anyone watches past it.</p>
+      </div>
+      <div class="card">
+        <div class="num">04</div>
+        <h3>Your branding</h3>
+        <p>Logo or handle placed correctly — visible on every frame, never cropped,
+           never fighting the platform's own interface.</p>
+      </div>
+      <div class="card">
+        <div class="num">05</div>
+        <h3>Full frame preserved</h3>
+        <p>Nothing important gets cut off. Wide footage is fitted rather than
+           centre-cropped, so the subject stays in shot.</p>
+      </div>
+      <div class="card">
+        <div class="num">06</div>
+        <h3>Source files</h3>
+        <p>SRT subtitles and the project file on request — you're never locked in if
+           you want to edit further yourself.</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>What you get</h2>
-    <div class="row">
-      <div class="col">
-        <ul class="checks">
-          <li>Vertical clips — 1080×1920, ready to post</li>
-          <li>Word-level captions with highlighted keywords</li>
-          <li>Custom hook text for the first 3 seconds</li>
-        </ul>
+    <div class="eyebrow">Process</div>
+    <h2>How a project runs</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="num">STEP ONE</div>
+        <h3>Send the footage</h3>
+        <p>Share the source file, your logo if you have one, and the handle you want
+           tagged. If you have a direction in mind, say so — otherwise I find the
+           moments myself.</p>
       </div>
-      <div class="col">
-        <ul class="checks">
-          <li>Your logo or watermark, correctly placed</li>
-          <li>Full frame preserved — nothing cropped off</li>
-          <li>MP4 exports + SRT subtitle files included</li>
-        </ul>
+      <div class="card">
+        <div class="num">STEP TWO</div>
+        <h3>I review and cut</h3>
+        <p>Full transcript first, then I select the strongest moments — a complete
+           thought, a real hook, and a reason to keep watching.</p>
+      </div>
+      <div class="card">
+        <div class="num">STEP THREE</div>
+        <h3>Review and revise</h3>
+        <p>Two revision rounds included. Send notes and I turn them around within 24
+           hours. Then you post — no reformatting needed.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="offer">
+<section id="pricing">
   <div class="wrap">
-    <h2>Pricing</h2>
-    <div class="tiers">
+    <div class="eyebrow">Pricing</div>
+    <h2>Simple, per clip</h2>
+    <p style="max-width:560px">No retainer to start, no onboarding fee. Pick a volume and see how it fits.</p>
+    <div class="price">
       <div class="tier">
-        <h3>Trial</h3>
-        <div class="price">$30</div>
+        <div class="label">Trial</div>
+        <div class="amount">$30</div>
         <div class="per">one clip</div>
         <ul>
-          <li>Judge the quality first</li>
+          <li>Judge the work first</li>
           <li>48-hour turnaround</li>
           <li>2 revision rounds</li>
         </ul>
       </div>
-      <div class="tier best">
-        <h3>Growth <span class="accent">· most picked</span></h3>
-        <div class="price">$200</div>
+      <div class="tier featured">
+        <div class="label">Standard</div>
+        <div class="amount">$200</div>
         <div class="per">ten clips — $20 each</div>
         <ul>
           <li>Best value per clip</li>
@@ -156,9 +232,9 @@
         </ul>
       </div>
       <div class="tier">
-        <h3>Monthly</h3>
-        <div class="price">$400+</div>
-        <div class="per">20–40 clips / month</div>
+        <div class="label">Monthly</div>
+        <div class="amount">$400+</div>
+        <div class="per">20–40 clips per month</div>
         <ul>
           <li>Priority turnaround</li>
           <li>Posting schedule guidance</li>
@@ -166,38 +242,57 @@
         </ul>
       </div>
     </div>
-    <p style="margin-top:26px">
-      <b class="accent">Not sure?</b> Send me one of your videos and I'll cut a
-      clip free — no card, no strings. You'll see exactly what you'd be buying.
+    <p style="margin-top:26px;font-size:14.5px">
+      Not sure yet? <b class="accent">Send one video and I'll cut a clip free</b> — so you
+      can judge the work before paying anything.
     </p>
   </div>
 </section>
 
-<section>
+<section id="faq">
   <div class="wrap">
-    <h2>Questions</h2>
-    <details class="faq"><summary>How fast is turnaround?</summary>
-      <p>48 hours for up to 5 clips. 5 days for 10+. Rush jobs available.</p></details>
-    <details class="faq"><summary>What do you need from me?</summary>
-      <p>Your source video file, your logo if you have one, and the handle you want
-         tagged. That's it.</p></details>
-    <details class="faq"><summary>Do you guarantee views?</summary>
-      <p>No — nobody honestly can. I guarantee the edit, the captions, the hooks and
-         the format are right. I've passed brand campaign reviews, which are stricter
-         than most clients' standards.</p></details>
-    <details class="faq"><summary>Can you match my style?</summary>
-      <p>Yes. Send an example of the look you want and I'll match caption style,
-         fonts and placement.</p></details>
-    <details class="faq"><summary>What if I don't like it?</summary>
-      <p>Two revision rounds are included. If the first clip isn't right, you don't
-         pay for it — that's the point of starting with one.</p></details>
+    <div class="eyebrow">Questions</div>
+    <h2>Before you commit</h2>
+    <details open><summary>How fast is turnaround?</summary>
+      <p>48 hours for up to five clips. Five days for ten or more. If you need it
+         faster, say so and I'll tell you honestly whether I can hit it.</p></details>
+    <details><summary>What do you need from me?</summary>
+      <p>The source video file, your logo if you have one, and the handle you want
+         tagged. That's it — I handle the rest.</p></details>
+    <details><summary>Do you guarantee views?</summary>
+      <p>No, and neither can anyone else. What I guarantee is the craft: the hook is
+         written deliberately, the captions are accurate, and the specs are right so
+         the platform doesn't suppress it. Performance depends on your content and
+         your audience.</p></details>
+    <details><summary>Can you match my existing style?</summary>
+      <p>Yes. Send a clip you like and I'll match the caption style, font, placement
+         and pacing.</p></details>
+    <details><summary>What if I don't like the first clip?</summary>
+      <p>You don't pay for it. Starting with one is the whole point — it costs you
+         nothing to find out whether my edit suits your content.</p></details>
+    <details><summary>What kind of content do you work with?</summary>
+      <p>Podcasts, interviews, talking-head, gameplay, product and lifestyle footage.
+         Not adult content, and nothing I'd have to misrepresent.</p></details>
+  </div>
+</section>
+
+<section id="contact" style="border-bottom:0">
+  <div class="wrap">
+    <div class="cta">
+      <h2 style="margin-bottom:12px">Send a video. See the result.</h2>
+      <p style="max-width:500px;margin:0 auto 28px">
+        One free clip, 48 hours, no card. If it doesn't fit your content you owe nothing.
+      </p>
+      <a class="btn" href="mailto:hello@example.com?subject=Short-form%20clip%20%E2%80%94%20free%20sample">Email me</a>
+      <a class="btn ghost" href="#pricing">See pricing</a>
+      <p style="margin-top:24px;font-size:13.5px">Replies within one business day.</p>
+    </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p><b class="accent">Ready?</b> DM me "clip" with a link to your channel and I'll
-       send a free sample within 48 hours.</p>
+    ShortForm Studio · Short-form editing for podcasts, creators and brands.
   </div>
 </footer>
 
